@@ -1,3 +1,4 @@
 <section class="weather-list">
-    <app-item></app-item>
+    <app-item *ngFor="let weatherItem of weatherItems"
+               [item]="weatherItem"></app-item>
 </section>

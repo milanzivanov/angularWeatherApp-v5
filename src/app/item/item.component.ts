@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ItemInfo } from './item-info';
+import { Component, OnInit, Input } from '@angular/core';
+import { WeatherItem } from '../weather-item';
 
 @Component({
   selector: 'app-item',
@@ -8,11 +8,9 @@ import { ItemInfo } from './item-info';
 })
 export class ItemComponent implements OnInit {
 
-  weatherItem: ItemInfo;
+  // @Input() weatherItem: WeatherItem;
 
-  constructor() {
-    this.weatherItem = new ItemInfo('Novi Knezevac', 'Rainy', 4);
-  }
+  @Input() item: WeatherItem;
 
   ngOnInit() {
   }

@@ -9,6 +9,3 @@ export class AppComponent {
   constructor () {
   }
 }
-
-// interface DataWeather {
-// }
