@@ -1,32 +1,5 @@
-<div>
-  <h1>Wether App By Me</h1>
-
-  <hr>
-
-  <input type="text"
-         [(ngModel)]="cityName"
-         placeholder="Search City" />
-
-  <button (click)="searchCity()">Search</button>
-
-  <h2>{{cityName}}</h2>
-  <p>
-    {{ name }} - {{ cityNameTemp }} (&deg;C) -
-    <img src='http://openweathermap.org/img/w/{{icon}}.png' alt="nn" />
-    - {{ description }}
-  </p>
-</div>
-
-<div>
-  <ul>
-    <li *ngFor="let item of addedCities; let i = index">
-      {{i+1}} - {{ item }} {{ cityNameTemp }} (&deg;C)
-      <img src='http://openweathermap.org/img/w/{{icon}}.png' alt="nn" />
-      {{ description }}
-        <button (click)="removeItem(i)">
-          delite
-        </button>
-    </li>
-  </ul>
-</div>
+<header>
+  <h1>weather app</h1>
+</header>
+<app-list></app-list>
 
