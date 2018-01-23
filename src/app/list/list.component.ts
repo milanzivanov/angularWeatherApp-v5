@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherItem } from '../weather-item';
 import { WEATHER_ITEMS } from '../weather.data';
+import { WeatherService } from '../weather.service';
 import { log } from 'util';
 
 @Component({
@@ -14,10 +15,11 @@ export class ListComponent implements OnInit {
   weatherItems: WeatherItem[];
   // weatherItems: WeatherItem[] = WEATHER_ITEMS;
 
-  constructor() { }
+  constructor(private _weatherService: WeatherService) { }
 
   ngOnInit() {
-    this.weatherItems = WEATHER_ITEMS;
+    // service
+    this.weatherItems = this._weatherService.getWetherItems();
 
     console.log( 'list component ' + this.weatherItems);
 

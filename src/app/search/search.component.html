@@ -1,0 +1,18 @@
+<section class="weather-search">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <label for="city">City</label>
+    <input type="text" ngControl="location" id="city" required>
+    <button type="submit">Add City</button>
+  </form>
+  <div>
+    <span class="info">City found:</span>City name
+  </div>
+</section>
+
+<!-- ngModel example -->
+<!-- <input [(ngModel)]="name" #ctrl="ngModel" required>
+
+<p>Value: {{ name }}</p>
+<p>Valid: {{ ctrl.valid }}</p>
+
+<button (click)="setValue()">Set value</button> -->
