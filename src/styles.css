@@ -4,29 +4,41 @@
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  /* font-size: 16px; */
   box-sizing:border-box;
+  white-space: nowrap;
 }
 
 header {
-  background-color: #3498db;
-  padding: 30px;
+  background-color: #111;
+  padding: 50px;
   width: 100%;
-  color: white;
   text-align: center;
   font-size: 30px;
-  color: #f1c40f;
+  color: #3498db;
+  background-image: url("./assets/w1.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow: 1px 1px 6px rgb(22, 21, 21);
 }
 
 .weather-list {
-  margin: 20px auto;
-  width: 40%;
+  margin: 10px auto;
+  max-width: 80%;
 }
 
 .weather-element {
   box-shadow: 1px 1px 6px #ccc;
   padding: 10px;
   margin: 10px 0;
+  float: left;
+  width: 33.333%;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tooltip {
@@ -48,16 +60,14 @@ header {
   font-weight: bold;
 }
 
-
 .weather-search {
-  margin: 20px auto;
-  width: 40%;
+  margin: 0 auto;
+  max-width: 90%;
   text-align: center;
+  padding: 5px;
+  background: #f5eceb;
 }
-label {
-  font-weight: bold;
-  margin-right: 20px;
-}
+
 
 button, input {
   font-size: inherit;
@@ -65,13 +75,39 @@ button, input {
 }
 
 input {
-  padding: 3px 5px;
+  padding: 15px 5px;
   outline: none;
-  width: 50%;
-  margin-right: 20px;
+  max-width: 300px;
 }
 
-button {
+/* tab city */
+.weather-tub {
+  padding: 17px 10px;
+  background-color: #3498db;
+}
+
+.weather-tub label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.weather-tub span {
+  transition: all 0.3s;
+  color: yellow;
+  cursor: pointer;
+}
+
+.weather-tub:hover span {
+  color: red;
+}
+
+/* form:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+/* button {
   background-color: #2ecc71;
   border: none;
   padding: 4px 8px;
@@ -82,7 +118,7 @@ button {
 
 button:hover {
   background-color: #27ae60;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .weather-list {

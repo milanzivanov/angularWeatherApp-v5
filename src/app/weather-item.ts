@@ -1,7 +1,8 @@
 export class WeatherItem {
+
   constructor(public cityName: string,
-              public description: string,
+              public country: string,
               public temp: number) {}
 }
 
-// **** interfaces
+// **** interfaces *****
