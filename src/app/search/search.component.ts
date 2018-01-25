@@ -27,57 +27,53 @@ export class SearchComponent implements OnInit {
   constructor(private _weatherService: WeatherService) { }
 
   ngOnInit() {
-    console.log('search data ' + this.data);
+    // console.log('search data ' + this.data);
   }
 
   // angular form documentation
-  onSubmit(f: NgForm) {
+  onSubmit() {
+
+    // exit from event
+    if (this.cityName.trim() === '') {
+      return;
+    }
+
     // console.log(f.value.cityName);
 
-    this._weatherService.searchWeatherData(f.value.cityName)
-    .subscribe(data => {
+    // more than one cites in input
+    const addedCities = this.cityName.split(',').map(city => city.trim());
 
-      // I get the data in the console???hm
-      console.log(data);
-      this.data = data;
-      console.log('search ' + this.data.date);
+    addedCities.forEach(city => {
+      // http service
+      this._weatherService.searchWeatherData(city)
+      .subscribe(data => {
+        // I get the data in the console???hm
+        console.log(data);
+        // this.data = data;
+        // adding weather data to the weather data
+        const weatherItem = new WeatherItem(data.cityName, data.country, data.temp);
+        this._weatherService.addWeatherItem(weatherItem);
 
-      // adding weather data to the weather data
-      const weatherItem = new WeatherItem(this.data.cityName, this.data.country, this.data.temp);
-      this._weatherService.addWeatherItem(weatherItem);
+        // 777 adding to search tamplate
+        // push data to resalt[]
+        // TRICKY
+        this.result.push(data.cityName);
 
-      // 777 adding to search tamplate
-      // push data to resalt[]
-      this.result.push(this.cityName);
-
-      // clear the input field
-      this.cityName = '';
-
-      // removeCity with service
-      // this._weatherService.removeCity(weatherItem);
+        // clear the input field
+        this.cityName = '';
+      },
+      error => {
+        console.log('City not found or not exsist!!!');
+      }
+    );
 
     });
-
-
   }
 
   // remove
   removeItem(i) {
-    // 555
-    // const root = this.result[i];
     WEATHER_ITEMS.splice(i, 1);
     this.result.splice(i, 1);
-
-    // 555
-    // this.cityRemoved.emit(root);
-    // console.log('test remove 111');
   }
-
-  // eventHandler(event) {
-  //   // if (event.keyCode === 13) {
-  //     this.onSubmit(event);
-  //   // }
-  // }
-
 }
 

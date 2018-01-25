@@ -28,9 +28,9 @@ export class WeatherService {
   }
 
   // remove item from tempalte search and from item cmponent
-  removeCity(i) {
-    WEATHER_ITEMS.splice(i, 1);
-  }
+  // removeCity(i) {
+  //   WEATHER_ITEMS.splice(i, 1);
+  // }
 
 
   // search weather app
@@ -52,7 +52,6 @@ export class WeatherService {
                         };
                      });
   }
-
 }
 
 export interface CityInfo {

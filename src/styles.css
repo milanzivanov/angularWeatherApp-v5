@@ -39,33 +39,39 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #0041ff;
+  background-color: #00ae7b;
+  background: linear-gradient(45deg, #0041ff, #0081bf);
+  padding: 5px;
 }
 
-.tooltip {
+/* .tooltip {
   position: absolute;
   padding: 3px;
   font-size: 12px;
   background-color: #eee;
   border-radius: 3px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(114, 148, 36);
   text-align: left;
-}
+} */
 
 .temperature {
   cursor: default;
 }
 
 .info {
-  color: rgba(95, 95, 95, 0.51);
+  color: #0044fb;
   font-weight: bold;
+  padding: 10px 0;
+  display: block;
 }
 
 .weather-search {
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 100%;
   text-align: center;
   padding: 5px;
-  background: #f5eceb;
+  /* background: rgb(95, 97, 218); */
 }
 
 
@@ -78,12 +84,13 @@ input {
   padding: 15px 5px;
   outline: none;
   max-width: 300px;
+  /* border: 0; */
 }
 
 /* tab city */
 .weather-tub {
   padding: 17px 10px;
-  background-color: #3498db;
+  background-color: #2988c6;
 }
 
 .weather-tub label {

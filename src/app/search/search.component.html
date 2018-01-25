@@ -1,23 +1,24 @@
 <section class="weather-search">
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <form (ngSubmit)="onSubmit()">
     <div class="weather-tub" *ngFor="let item of result; let i = index;">
       <label for="city">{{ item }}
       </label>
       <span (click)="removeItem(i)">X</span>
     </div>
     <input [(ngModel)]='cityName'
+           id='city'
            name='cityName'
            type='text'
-           id='city'
            required
            placeholder="Search cities">
 
-    <!-- <button type="submit"
-            (submit)="onSubmit($event)">Add City</button> -->
+    <button type="submit"
+            (submit)="onSubmit($event)">Add City</button>
   </form>
 
-  <!-- <div>
-    <span class="info">City found: {{cityName}}</span>
-  </div> -->
+  <div>
+    <span class="info">City found:&nbsp;</span>{{cityName}}
+  </div>
+
 </section>
 
