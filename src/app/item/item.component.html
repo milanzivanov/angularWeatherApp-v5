@@ -4,6 +4,8 @@
         <p class="info">{{item.country}}</p>
     </div>
     <div class="col-2">
-        <span class="temperature">{{item.temp}}°C</span>
+        <span class="temperature"
+              [ngStyle]="{'color': item.temp > 0? 'indianred' : '#2d8dce'}">
+              {{item.temp}}°C</span>
     </div>
 </article>

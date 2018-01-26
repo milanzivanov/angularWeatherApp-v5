@@ -27,7 +27,6 @@ export class SearchComponent implements OnInit {
   constructor(private _weatherService: WeatherService) { }
 
   ngOnInit() {
-    // console.log('search data ' + this.data);
   }
 
   // angular form documentation
@@ -38,8 +37,6 @@ export class SearchComponent implements OnInit {
       return;
     }
 
-    // console.log(f.value.cityName);
-
     // more than one cites in input
     const addedCities = this.cityName.split(',').map(city => city.trim());
 
@@ -47,14 +44,11 @@ export class SearchComponent implements OnInit {
       // http service
       this._weatherService.searchWeatherData(city)
       .subscribe(data => {
-        // I get the data in the console???hm
-        console.log(data);
-        // this.data = data;
+
         // adding weather data to the weather data
         const weatherItem = new WeatherItem(data.cityName, data.country, data.temp);
         this._weatherService.addWeatherItem(weatherItem);
 
-        // 777 adding to search tamplate
         // push data to resalt[]
         // TRICKY
         this.result.push(data.cityName);
@@ -63,14 +57,14 @@ export class SearchComponent implements OnInit {
         this.cityName = '';
       },
       error => {
-        console.log('City not found or not exsist!!!');
+        alert('City not found or not exsist!!! Try agean.');
       }
     );
 
     });
   }
 
-  // remove
+  // remove city
   removeItem(i) {
     WEATHER_ITEMS.splice(i, 1);
     this.result.splice(i, 1);
