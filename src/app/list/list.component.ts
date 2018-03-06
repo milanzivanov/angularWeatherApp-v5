@@ -22,7 +22,6 @@ export class ListComponent implements OnInit {
     this.weatherItems = this._weatherService.getWetherItems();
 
     console.log( 'list component ' + this.weatherItems);
-
   }
 
 }

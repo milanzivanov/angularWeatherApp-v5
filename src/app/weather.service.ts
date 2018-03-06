@@ -27,22 +27,21 @@ export class WeatherService {
     WEATHER_ITEMS.push(WeatherItem);
   }
 
-
   // search weather app
   searchWeatherData(cityName: string): Observable<any> {
 
     // tslint:disable-next-line:max-line-length
     return this._http.get(`http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=cf4acfccaeb719f8f2992c4f80d2031b&q=${cityName}&units=metric`)
-                     .map((response) => {
-                       console.log(response);
-                       const temp = response as RootObject;
-                       console.log(temp.city.country);
-                       return {
-                         cityName: temp.city.name,
-                         temp: temp.list[0].main.temp,
-                         country: temp.city.country
-                        };
-                     });
+    .map((response) => {
+      console.log(response);
+      const temp = response as RootObject;
+      console.log(temp.city.country);
+      return {
+        cityName: temp.city.name,
+        temp: temp.list[0].main.temp,
+        country: temp.city.country
+      };
+    });
   }
 }
 

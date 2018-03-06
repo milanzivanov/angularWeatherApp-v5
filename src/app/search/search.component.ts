@@ -31,7 +31,6 @@ export class SearchComponent implements OnInit {
 
   // angular form documentation
   onSubmit() {
-
     // exit from event
     if (this.cityName.trim() === '') {
       return;
@@ -50,7 +49,6 @@ export class SearchComponent implements OnInit {
         this._weatherService.addWeatherItem(weatherItem);
 
         // push data to resalt[]
-        // TRICKY
         this.result.push(data.cityName);
 
         // clear the input field
@@ -60,7 +58,6 @@ export class SearchComponent implements OnInit {
         alert('City not found or not exsist!!! Try agean.');
       }
     );
-
     });
   }
 
