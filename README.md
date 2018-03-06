@@ -4,4 +4,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Link preview
 
-[hacker news clone](https://http://daily-owner.surge.sh/)
+[weather app link](https://http://daily-owner.surge.sh/)
