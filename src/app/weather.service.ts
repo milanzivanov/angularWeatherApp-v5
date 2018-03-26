@@ -31,7 +31,7 @@ export class WeatherService {
   searchWeatherData(cityName: string): Observable<any> {
 
     // tslint:disable-next-line:max-line-length
-    return this._http.get(`http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=cf4acfccaeb719f8f2992c4f80d2031b&q=${cityName}&units=metric`)
+    return this._http.get(`https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=cf4acfccaeb719f8f2992c4f80d2031b&q=${cityName}&units=metric`)
     .map((response) => {
       console.log(response);
       const temp = response as RootObject;
