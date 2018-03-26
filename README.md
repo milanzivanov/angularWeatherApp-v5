@@ -4,4 +4,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Link preview
 
-[weather app link](https://http://daily-owner.surge.sh/)
+[weather app link max3](https://simplistic-size.surge.sh/)

@@ -4,5 +4,3 @@ export class WeatherItem {
               public country?: string,
               public temp?: number) {}
 }
-
-// **** interfaces *****

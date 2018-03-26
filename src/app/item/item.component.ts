@@ -8,8 +8,6 @@ import { WeatherItem } from '../weather-item';
 })
 export class ItemComponent implements OnInit {
 
-  // @Input() weatherItem: WeatherItem;
-
   // @Input() list component to item component
   @Input() item: WeatherItem;
 
